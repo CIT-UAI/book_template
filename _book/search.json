@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Book con Quarto",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "create_proj.html",
+    "href": "create_proj.html",
+    "title": "2  Creación de Proyecto",
+    "section": "",
+    "text": "Como primer paso se debe instalar el cliente Quarto CLI de acuerdo al sistema operativo del computador.\n\n\n\n\n\nLa herramienta de generación de contenido es multuplataforma y se puede utilizar con diferentes softwares, para el caso del siguiente tutorial se usar Rstudio."
+  },
+  {
+    "objectID": "create_proj.html#instalar-librería-quarto",
+    "href": "create_proj.html#instalar-librería-quarto",
+    "title": "2  Creación de Proyecto",
+    "section": "2.2 Instalar Librería quarto",
+    "text": "2.2 Instalar Librería quarto\nInstalar la libreria quarto en R, para aporvechar sus funcioalidad junto a Rstudio.\n\ninstall.packages(\"quarto\")\n\nSe sugiere luego de la instalación reiniciar la sesión en Rstudio."
+  },
+  {
+    "objectID": "create_proj.html#creación-de-nuevo-proyecto-en-rstudio",
+    "href": "create_proj.html#creación-de-nuevo-proyecto-en-rstudio",
+    "title": "2  Creación de Proyecto",
+    "section": "2.3 Creación de Nuevo proyecto en Rstudio",
+    "text": "2.3 Creación de Nuevo proyecto en Rstudio\n\n\n\nCrear Nuevo proyecto en Rstudio\n\n\n\n\n\nSelección de Quarto Book\n\n\n\n\n\nConfiguración Incial Quarto Book\n\n\n\n\n\nArchivos generados por defecto"
+  },
+  {
+    "objectID": "create_proj.html#render-book-digital",
+    "href": "create_proj.html#render-book-digital",
+    "title": "2  Creación de Proyecto",
+    "section": "2.4 Render Book Digital",
+    "text": "2.4 Render Book Digital\nUna vez creado el proyecto se puede renderizar el libro digital, con la instrucción de la terminal: quarto preview, como se observa en la siguiente figura.\n\n\n\nComando para Renderizar libro en su version estandar\n\n\nEl comando anterior levanta un servicio localhost en un puerto dinámico, para el caso es el 7706, y el libro se muestra ya compilado en el navegador web por defecto con la dirección (http://localhost:7706/).\n\n\n\nRender inicial del Book por defecto\n\n\nLo más importante, que al levantar el servicio queda ecuchando si hay cambios en el documento, entonces se pude editar el archivo.qmd y se observarán los cambios casi inmediatamente en el navegador web."
+  },
+  {
+    "objectID": "str_book.html",
+    "href": "str_book.html",
+    "title": "3  Estructura del Book",
+    "section": "",
+    "text": "4 Modificar Archivo de Configuración\nComo actividad pueden modificar el archivo de configuración _quarto.yml con información del autor, como se observa a continuación."
+  },
+  {
+    "objectID": "str_book.html#archivo-de-configutración-_quarto.yml",
+    "href": "str_book.html#archivo-de-configutración-_quarto.yml",
+    "title": "3  Estructura del Book",
+    "section": "3.1 Archivo de Configutración _quarto.yml",
+    "text": "3.1 Archivo de Configutración _quarto.yml\nEs el archivo donde se configura y controla todo el libro digital, como por ejemplo título, autor, fecha, bibliografía y el orden de los capítulos, a continuación se observa la configuración inicial.\n\nproject:\n  type: book\n\nbook:\n  title: \"quarto_book\"\n  author: \"Jane Doe\"\n  date: \"2/7/2023\"\n  chapters:\n    - index.qmd\n    - intro.qmd\n    - create_proj.qmd\n    - str_book.qmd\n    - summary.qmd\n    - references.qmd\n\nbibliography: references.bib\n\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreprt\n\nLos archivos con la extensión .qmd son los que almacenan el contenido y se pueden considerar como capitulos\n\nEl archivo index.qmd es necesario (porque los libros de Quarto también producen una página web en formato HTML). Esta página debe incluir el prefacio, los agradecimientos, etc. y los títulos del archivo index.qmd no están numerados por defecto. La versión HTML del libro utilizará el index.qmd como página de inicio y, si se proporciona, colocará la imagen de portada en esa página.\nEl resto de capítulos (chapters) incluye uno o más capítulos del libro.\nEl archivo references.qmd incluirá la bibliografía generada (ver Referencias más abajo para más detalles)."
+  },
+  {
+    "objectID": "add_chapter.html",
+    "href": "add_chapter.html",
+    "title": "4  Capítulo Nuevo",
+    "section": "",
+    "text": "Existen dos formas de agregar título a un capítulo, que se disponen al inicio del documento .qmd que corresponde a las siguientes:\n\n# Introduction\n\nOtra forma perfectamente válida\n\n---\ntitle: \"Introduction\"\n---"
+  },
+  {
+    "objectID": "add_chapter.html#agregar-subtítulos",
+    "href": "add_chapter.html#agregar-subtítulos",
+    "title": "4  Capítulo Nuevo",
+    "section": "4.2 Agregar Subtítulos",
+    "text": "4.2 Agregar Subtítulos\n\n---\nsubtitle: \"Introduction of book\"\n---"
+  },
+  {
+    "objectID": "add_chapter.html#tabla-de-contenidos",
+    "href": "add_chapter.html#tabla-de-contenidos",
+    "title": "4  Capítulo Nuevo",
+    "section": "4.3 Tabla de Contenidos",
+    "text": "4.3 Tabla de Contenidos\n\ntoc: true\ntoc-depth: 2\n\n\ntoc-title: Contents\n\n\n### More Options {.unnumbered .unlisted}"
+  },
+  {
+    "objectID": "add_chapter.html#section-numbering",
+    "href": "add_chapter.html#section-numbering",
+    "title": "4  Capítulo Nuevo",
+    "section": "4.3 Section Numbering",
+    "text": "4.3 Section Numbering\n\nnumber-sections: true\nnumber-depth: 3\n\n\n### More Options {.unnumbered}"
+  },
+  {
+    "objectID": "add_chapter.html#referencias-del-capitulo",
+    "href": "add_chapter.html#referencias-del-capitulo",
+    "title": "4  Capítulo Nuevo",
+    "section": "4.4 Referencias del Capitulo",
+    "text": "4.4 Referencias del Capitulo\n\nHTML Basics\nHTML Options"
+  },
+  {
+    "objectID": "create_proj.html#instalar-cliente-quarto",
+    "href": "create_proj.html#instalar-cliente-quarto",
+    "title": "2  Creación de Proyecto",
+    "section": "2.1 Instalar Cliente Quarto",
+    "text": "2.1 Instalar Cliente Quarto\nComo primer paso se debe instalar el cliente Quarto CLI de acuerdo al sistema operativo del computador.\n\n\n\n\n\nLa herramienta de generación de contenido es multuplataforma y se puede utilizar con diferentes softwares, para el caso del siguiente tutorial se usar Rstudio."
+  },
+  {
+    "objectID": "add_chapter.html#agregar-títulos",
+    "href": "add_chapter.html#agregar-títulos",
+    "title": "4  Capítulo Nuevo",
+    "section": "4.1 Agregar Títulos",
+    "text": "4.1 Agregar Títulos\nExisten dos formas de agregar título a un capítulo, que se disponen al inicio del documento .qmd que corresponde a las siguientes:\n\n# Introduction\n\nOtra forma perfectamente válida\n\n---\ntitle: \"Introduction\"\n---"
+  }
+]

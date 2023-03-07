@@ -1,0 +1,41 @@
+# Creación de Proyecto
+
+## Instalar Cliente Quarto
+
+Como primer paso se debe instalar el cliente [*Quarto CLI*](https://quarto.org/docs/get-started/) de acuerdo al sistema operativo del computador.
+
+[![](images/install_cli.png){fig-align="center" width="800"}](https://quarto.org/docs/get-started/)
+
+La herramienta de generación de contenido es multuplataforma y se puede utilizar con diferentes softwares, para el caso del siguiente tutorial se usar Rstudio.
+
+## Instalar Librería `quarto`
+
+Instalar la libreria `quarto` en R, para aporvechar sus funcioalidad junto a Rstudio.
+
+```{r eval=FALSE}
+install.packages("quarto")
+```
+
+Se sugiere luego de la instalación reiniciar la sesión en Rstudio.
+
+## Creación de Nuevo proyecto en Rstudio
+
+![Crear Nuevo proyecto en Rstudio](images/new_proj.png){width="350"}
+
+![Selección de Quarto Book](images/sel_quarto.png){width="350"}
+
+![Configuración Incial Quarto Book](images/conf_book.png){width="350"}
+
+![Archivos generados por defecto](images/str_inicial.png){width="300"}
+
+## Render Book Digital
+
+Una vez creado el proyecto se puede renderizar el libro digital, con la instrucción de la terminal: `quarto preview`, como se observa en la siguiente figura.
+
+![Comando para Renderizar libro en su version estandar](images/q_preview.png){width="500"}
+
+El comando anterior levanta un servicio *localhost* en un puerto dinámico, para el caso es el `7706`, y el libro se muestra ya compilado en el navegador web por defecto con la dirección (*http://localhost:7706/*).
+
+![Render inicial del Book por defecto](images/render_inicial.png){width="800"}
+
+Lo más importante, que al levantar el servicio queda ecuchando si hay cambios en el documento, entonces se pude editar el archivo.qmd y se observarán los cambios casi inmediatamente en el navegador web.

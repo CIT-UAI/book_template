@@ -1,0 +1,35 @@
+project:
+  type: book
+
+book:
+  title: "Book con Quarto"
+  subtitle: "Centro de Inteligencia Territorial - UAI"
+  author: 
+    - name: Denis Berroeta González 
+      url: https://cit.uai.cl/denis-berroeta/
+      affiliation: Centro de Inteligencia Territorial
+      affiliation-url: https://cit.uai.cl
+      email: denis.berroeta@uai.cl
+  date: "2023-02-07"
+  page-footer:
+    left: "Copyright 2023, Denis Berroeta"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - create_proj.qmd
+    - str_book.qmd
+    - add_chapter.qmd
+    - add_contenido.qmd
+  # appendices:
+  #   - create_proj.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

@@ -1,0 +1,83 @@
+# Estructura del Book
+
+Lo siguiente se basa en un resumen de la documentación oficial de Quarto ([Book Structure](https://quarto.org/docs/books/book-structure.html))
+
+
+## Archivo de Configutración `_quarto.yml`
+
+Es el archivo donde se configura y controla todo el libro digital, como por ejemplo título, autor, fecha, bibliografía y el orden de los capítulos, a continuación se observa la configuración inicial.
+
+
+```{r eval=FALSE}
+project:
+  type: book
+
+book:
+  title: "quarto_book"
+  author: "Jane Doe"
+  date: "2/7/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - create_proj.qmd
+    - str_book.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+```
+
+Los archivos con la extensión `.qmd` son los que almacenan el contenido y se pueden considerar como capitulos
+
+* El archivo `index.qmd` es necesario (porque los libros de Quarto también producen una página web en formato HTML). Esta página debe incluir el prefacio, los agradecimientos, etc. y los títulos del archivo index.qmd no están numerados por defecto. La versión HTML del libro utilizará el `index.qmd` como página de inicio y, si se proporciona, colocará la imagen de portada en esa página.
+* El resto de capítulos (`chapters`) incluye uno o más capítulos del libro.
+* El archivo refe`rences.qmd` incluirá la bibliografía generada (ver [Referencias](https://quarto.org/docs/books/book-structure.html#references) más abajo para más detalles).
+
+
+
+# Modificar Archivo de Configuración 
+
+Como actividad pueden modificar el archivo de configuración `_quarto.yml` con información del autor, como se observa a continuación.
+
+```{r eval=FALSE}
+project:
+  type: book
+
+book:
+  title: "Book con Quarto"
+  subtitle: "Centro de Inteligencia Territorial - UAI"
+  author: 
+    - name: Denis Berroeta González 
+      url: https://cit.uai.cl/denis-berroeta/
+      affiliation: Centro de Inteligencia Territorial
+      affiliation-url: https://cit.uai.cl
+      email: denis.berroeta@uai.cl
+  date: "2023-02-07"
+  page-footer:
+    left: "Copyright 2023, Denis Berroeta"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - create_proj.qmd
+    - str_book.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+```
+
+
+

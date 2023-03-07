@@ -1,0 +1,51 @@
+# Capítulo Nuevo
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+## Agregar Títulos
+
+Existen dos formas de agregar título a un capítulo, que se disponen al inicio del documento `.qmd`   que corresponde a las siguientes:
+
+```{r}
+# Introduction
+```
+
+
+Otra forma perfectamente válida
+
+```{r}
+---
+title: "Introduction"
+---
+```
+
+## Agregar Subtítulos
+
+```{r}
+---
+subtitle: "Introduction of book"
+---
+```
+
+
+
+## Section Numbering
+
+```{r}
+number-sections: true
+number-depth: 3
+```
+
+
+```{r}
+### More Options {.unnumbered}
+```
+
+
+
+## Referencias del Capitulo
+
+- [HTML Basics](https://quarto.org/docs/output-formats/html-basics.html)
+- [HTML Options](https://quarto.org/docs/reference/formats/html.html)
