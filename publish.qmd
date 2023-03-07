@@ -1,0 +1,36 @@
+# Publicar Book
+
+Para publicar el libro digital en una plataforma online gratuita usaremos __Github Pages__ por lo cual debemos tener una cuenta personal.
+
+
+## 1. Crear un repositorio Github.
+![](images/new_repo.png)
+
+## 2. Asociar el proyecto del libro al repositorio
+
+Una vez que se crea el repositorio te entrega las siguientes instrucciones
+
+![](images/asociar_repo.png)
+
+Entoncede se debe agregar en la terminal:
+```
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:CIT-UAI/book_template.git
+git push -u origin main
+```
+
+
+## 3. Publicar con quarto
+
+En la terminal:
+```
+quarto publish
+```
+
+## Referencia:
+
+[https://quarto.org/docs/publishing/github-pages.html](https://quarto.org/docs/publishing/github-pages.html)
+

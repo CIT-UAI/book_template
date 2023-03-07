@@ -1,2 +1,277 @@
 # Agregar Contenido
 
+
+
+## Imágenes
+
+[referencias](https://quarto.org/docs/authoring/figures.html))
+
+
+```
+![Caption](path relativa de la imagen)
+```
+
+![Imagen de ejemplo ](images/indigenas_dist.png){#fig-mapa1}
+
+Dos imágenes en linea
+
+```
+::: {#fig-elephants layout-ncol=2}
+
+![a](images/dem_continuo.png){#fig-surus}
+
+![b](images/dem_discreto.png){#fig-hanno}
+
+Par de imágenes en Linea
+:::
+```
+
+
+
+<br>
+
+::: {#fig-elephants layout-ncol=2}
+
+![a](images/dem_continuo.png){#fig-surus}
+
+![b](images/dem_discreto.png){#fig-hanno}
+
+Par de imágenes en Linea
+:::
+
+## Tablas
+
+ - [https://quarto.org/docs/authoring/tables.html](https://quarto.org/docs/authoring/tables.html)
+ - [https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+
+
+Esto se agrega en el documento.
+```
+#| label: tbl-cars
+#| tbl-cap: "Tabla de Diamonds"
+
+library(kableExtra)
+library(ggplot2)
+
+dt <- diamonds[sample(1:nrow(diamonds), size = 10),] %>% as.data.frame()
+
+dt %>%
+  kbl() %>%
+  kable_styling()
+
+```
+
+
+```{r}
+#| label: tbl-cars
+#| tbl-cap: "Tabla de Diamonds"
+
+library(kableExtra)
+library(ggplot2)
+
+dt <- diamonds[sample(1:nrow(diamonds), size = 10),] %>% as.data.frame()
+
+dt %>%
+  kbl() %>%
+  kable_styling()
+
+```
+
+
+```{r}
+dt %>%
+  kbl() %>%
+  kable_material_dark()
+```
+
+
+## Códigos
+
+**Bloque de Código:**
+
+```{r echo=TRUE}
+summary(cars$dist)
+summary(cars$speed)
+```
+
+
+**Código en Linea**
+
+There were `r nrow(cars)` cars studied
+
+## Gráficos
+
+**Ggplot**
+```{r}
+library(ggplot2)
+
+df <- diamonds[sample(1:nrow(diamonds), size = 1000),]
+
+p <- ggplot(df, aes(carat, price, col=cut)) +
+  geom_point() +
+  theme(axis.ticks = element_line(size = 10))+
+  theme_bw()
+  
+p
+```
+
+
+
+**Plotly**
+
+[https://plotly.com/ggplot2/tick-formatting/](https://plotly.com/ggplot2/tick-formatting/)
+
+```{r}
+library(plotly)
+
+ggplotly(p)
+```
+
+## Component Layout
+
+
+
+::: {.panel-tabset}
+
+## Plot
+
+```{r}
+ggplotly(p)
+```
+
+## Data
+
+```{r}
+df %>%
+  kbl() %>%
+  kable_styling()
+```
+
+:::
+
+
+<br>
+
+## Mapas
+
+```{r eval=F}
+
+library(sf)
+library(mapview)
+comunas <-  readRDS("data/R02_COMUNAS.rds")
+mapview(comunas, zcol ="NOM_COMUNA")
+```
+
+
+```{r echo=FALSE, warning=FALSE, message=F}
+library(sf)
+library(mapview)
+
+comunas <-  readRDS("data/R02_COMUNAS.rds")
+
+mapview(comunas, zcol ="NOM_COMUNA")
+```
+
+
+
+## Listas
+
+Listas desordenadas
+
+```
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+    
+```
+
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+    
+Listas Ordenadas
+
+```
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+```
+
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+ 
+
+## Equaciones
+
+**Inline Equation**
+
+ .... \$ a = b+c \$ ....
+ 
+Esta es una ecuación $a = b+c$ está en linea de texto
+
+**Ecuación al centro**
+
+```
+$$d(P_1, P_2) = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$$
+```
+
+$$d(P_1, P_2) = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$${#eq-euclidiana}
+
+
+## Diagramas con mermaid
+
+
+```{}
+sequenceDiagram
+  participant Alice
+  participant Bob
+  Alice->>John: Hello John, how are you?
+  loop Healthcheck
+    John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts <br/>prevail!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
+```
+
+
+
+```{mermaid}
+sequenceDiagram
+  participant Alice
+  participant Bob
+  Alice->>John: Hello John, how are you?
+  loop Healthcheck
+    John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts <br/>prevail!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
+```
+
+referencias: [mermaid](https://mermaid.js.org/#/)
+
+## Referencias cruzadas
+ sefebe seguir la siguiebte
+```
+@ + tipo + nombre
+
+ej:
+
+@fig-mapa1
+```
+
+Referencia de imagen \@fig-mapa1 @fig-mapa1
+
+Referencia de Tablas \@-tbl-cars @tbl-cars
+
+Referencia a ecuaciones \@eq-euclidiana @eq-euclidiana

@@ -1,9 +1,17 @@
-# Introduction
+# Introducción
 
-This is a book created from markdown and executable code.
+Se realizará un recorrido por la creación del proyecto, crear un libro digital base, agregar contenido, personalización y su  publicación.
 
-See @knuth84 for additional discussion of literate programming.
+Una vez que hayas creado la plantilla básica del libro, consulta estos artículos para conocer varias formas de mejorar tu libro:
 
-```{r}
-1 + 1
-```
+[Estructura del libro](https://quarto.org/docs/books/book-structure.html) profundiza en las distintas formas de estructurar un libro (capítulos/secciones numerados y sin numerar, creación de varias partes, adición de apéndices, etc.).
+
+[Book Crossrefs](https://quarto.org/docs/books/book-crossrefs.html) explica cómo crear referencias cruzadas a secciones, figuras, tablas, ecuaciones y más dentro de los libros.
+
+[Salida del libro](https://quarto.org/docs/books/book-output.html) cubre la personalización del estilo y la apariencia de su libro en los distintos formatos de salida, así como la forma de proporcionar navegación y otras herramientas para los lectores.
+
+[Opciones del libro](https://quarto.org/docs/reference/projects/books.html) proporciona una referencia completa de todas las opciones disponibles del libro.
+
+[Ejecución del código](https://quarto.org/docs/projects/code-execution.html) proporciona consejos para optimizar la presentación de libros con un gran número de documentos o cálculos costosos.
+
+[Publicar sitios web](https://quarto.org/docs/publishing/) enumera las diversas opciones para publicar su libro como un sitio web, incluyendo **GitHub Pages**, Netlify y RStudio Connect.

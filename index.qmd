@@ -1,9 +1,8 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Este es un taller rápido para la creación de un libro digital usando [quarto](https://quarto.org) y su posterior publicación usando _Github Pages_
 
-```{r}
-1 + 1
-```
+
+Para la estructura se utilizará los contenidos [https://quarto.org/docs/books/](https://quarto.org/docs/books/).
+
